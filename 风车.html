@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>转动</title>
+		<style type="text/css">
+			:root{
+				--width: 400px;
+				--height: 400px;
+				--ch-width: 200px;
+				--ch-height: 200px;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}	
+			/* 定义动画 */
+			@keyframes myanimate {
+				0%{transform: rotate(0deg)}
+				100%{transform: rotate(360deg);}
+			}
+			/* 居中显示 */
+			html,body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+			}
+			/* 定义父盒子 */
+			.fa-box{
+				/* 调用动画 */
+				animation: myanimate 3s linear infinite;
+				
+				width: var(--width);
+				height: var(--height);
+			}
+			
+			/* 定义四个子盒子 */
+			.fa-box div{
+				float: left;
+				width: var(--ch-width);
+				height: var(--ch-height);
+			}
+			.fa-box div:nth-of-type(1){
+				border-top-right-radius: 50%;
+				border-bottom-left-radius: 50%;
+				background-color: pink;
+			}
+			.fa-box div:nth-of-type(2){
+				border-bottom-right-radius: 50%;
+				border-top-left-radius: 50%;
+				background-color: lightblue;
+			}
+			.fa-box div:nth-of-type(3){
+				border-bottom-right-radius: 50%;
+				border-top-left-radius: 50%;
+				background-color: lightcyan;
+			}
+			.fa-box div:nth-of-type(4){
+				border-top-right-radius: 50%;
+				border-bottom-left-radius: 50%;
+				background-color: lightgreen;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="fa-box">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+
+</html>
